@@ -8,4 +8,11 @@
  *
  */
 
-
+function my_custom_posttypes() {
+	$args = array(
+		'public' => true,
+		'label' => 'Jobs'
+	);
+	register_post_type( 'jobs', $args );
+}
+add_action ( 'init', 'my_custom_posttypes');
