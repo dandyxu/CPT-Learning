@@ -39,7 +39,9 @@ function my_custom_posttypes() {
 		'capability_type'       => 'post',
 		'has_archive'           => true,
 		'hierarchical'          => false,
-		'supports'              => array( 'title', 'editor', 'thumbnail' )
+		'supports'              => array( 'title', 'editor', 'thumbnail' ),
+		'show_in_rest'			=> true,
+		'rest_base' 			=> 'jobs-api'
 	);
  	register_post_type( 'jobs', $args );
 }
