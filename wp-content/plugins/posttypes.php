@@ -99,3 +99,26 @@ function my_rewrite_flush() {
 	flush_rewrite_rules();
 }
 register_activation_hook( __FILE__, 'my_rewrite_flush' );
+
+// Custom Taxonomy
+function my_custom_taxonomy() {
+	/* Type of Product / Service */
+	$args = array (
+		'label' 		=> 'Type of Product / Service',
+		'rewrite' 		=> array ( 'slug' => 'product-type' ),
+		'hierarchical' 	=> true,
+
+	);
+	register_taxonomy ( 'product-type', 'reviews', $args );
+
+	/* Mood */
+	$args = array (
+		'label' 		=> 'Mood',
+		'rewrite' 		=> array ( 'slug' => 'mood' ),
+		'hierarchical' 	=> false,
+
+	);
+	register_taxonomy ( 'mood', 'reviews', $args );
+}
+
+add_action ( 'init' , 'my_custom_taxonomy' );
