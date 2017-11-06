@@ -11,7 +11,7 @@
  */
 
 ?>
-testtesttest
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	if ( is_sticky() && is_home() ) :
@@ -20,7 +20,7 @@ testtesttest
 	?>
 	<header class="entry-header">
 		<?php
-		if ( 'post' === get_post_type() ) {
+		if ( 'reviews' === get_post_type() ) {
 			echo '<div class="entry-meta">';
 				if ( is_single() ) {
 					twentyseventeen_posted_on();
@@ -28,7 +28,23 @@ testtesttest
 					echo twentyseventeen_time_link();
 					twentyseventeen_edit_link();
 				};
-			echo '</div><!-- .entry-meta -->';
+            echo '</div><!-- .entry-meta -->'; ?>
+        
+        <div class="taxonomy">
+            <div class="product-type">
+                <?php echo get_the_term_list( $post->ID, 'product-type', 'Product Type: ', ',', '' ); ?>
+            </div>
+
+            <div class="price-range">
+                <?php echo get_the_term_list( $post->ID, 'price-range', 'Price Range: ', ',', '' ); ?>
+            </div>
+
+            <div class="moods">
+                <?php echo get_the_term_list( $post->ID, 'mood', 'The mood this put me in: ', ',', '' ); ?>
+            </div>
+        </div>
+            
+            <?php
 		};
 
 		if ( is_single() ) {
@@ -39,6 +55,9 @@ testtesttest
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		}
 		?>
+
+       
+
 	</header><!-- .entry-header -->
 
 	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
