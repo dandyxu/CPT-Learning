@@ -158,6 +158,32 @@ function my_custom_taxonomy() {
 
 	);
 	register_taxonomy ( 'mood', array( 'reviews', 'post' ), $args );
+
+	/* Price Range */
+	$labels = array(
+		'name' 			=> 'Price Range',
+		'singular_name' => 'Price Range',
+		'search_items'  => 'Search Price Range',
+		'all_items'     => 'All Price Range',
+		'parent_item'   => 'Parent Price Range',
+		'parent_item_colon' => 'Parent Price Range',
+		'edit_item'     => 'Edit Price Range',
+		'update_item'   => 'Update Price Range',
+		'add_new_item'  => 'Add New Price Range',
+		'new_item_name' => 'New Price Range',
+		'menu_name'     => 'Price Range',
+	);
+
+	$args = array (
+		'labels' 		=> $labels,
+		'rewrite' 		=> array ( 'slug' => 'price-range' ),
+		'hierarchical' 	=> true,
+		'show_ui'		=> true,
+		'show_admin_column' => true,
+		'query_var' 	=> true,
+	);
+	register_taxonomy ( 'price-range', array( 'reviews' ), $args );
+
 }
 
 add_action ( 'init' , 'my_custom_taxonomy' );
