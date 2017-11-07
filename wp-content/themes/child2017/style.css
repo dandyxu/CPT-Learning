@@ -19,3 +19,23 @@
     text-transform: uppercase;
     color: #fff;
 }
+
+#jobs {
+    background: #fff;
+    padding: 4rem 0;
+}
+
+.jobs {
+    width: 33.333333%;
+    float: left;
+    padding: 0 4rem;
+}
+
+.jobs-thumb img {
+    display: block;
+    margin: 0 auto 2rem;
+}
+
+.jobs h1 {
+    text-align: center;
+}
