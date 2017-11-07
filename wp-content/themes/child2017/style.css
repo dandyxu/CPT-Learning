@@ -9,3 +9,13 @@
 */
 
 @import url( '../twentyseventeen/style.css');
+
+.reviews-header {
+    padding: 3px 2rem;
+    margin-top: -1.8em;
+    background: hsl(0, 0%, 25%);
+    font-family: 'Lato';
+    font-size: 80%;
+    text-transform: uppercase;
+    color: #fff;
+}

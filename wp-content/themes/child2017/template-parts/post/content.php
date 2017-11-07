@@ -18,6 +18,14 @@
 		echo twentyseventeen_get_svg( array( 'icon' => 'thumb-tack' ) );
 	endif;
 	?>
+
+	<!-- Highlight CPT for Reviews -->
+	<?php
+		if( 'reviews' === get_post_type() ){
+			echo '<div class="reviews-header">Reviews</div>';
+		}
+	?>
+
 	<header class="entry-header">
 		<?php
 		if ( 'post' === get_post_type() ) {
